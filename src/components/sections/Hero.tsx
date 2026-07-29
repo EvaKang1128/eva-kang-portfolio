@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-canvas pb-16 pt-28 sm:pt-32 lg:flex lg:items-center lg:pb-20"
+      className="relative overflow-hidden bg-canvas pb-20 pt-28 sm:pt-32 lg:flex lg:min-h-[740px] lg:items-center lg:py-28"
     >
       <img
         src={assetPath('/images/hero/eva-hero-bg.webp')}

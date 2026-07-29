@@ -4,7 +4,7 @@ export const education: EducationItem[] = [
   {
     school: '香港大学',
     schoolEn: 'The University of Hong Kong',
-    degree: '理学硕士｜商业分析',
+    degree: '理学硕士｜商业分析（人工智能）',
     degreeEn: 'Master of Science in Business Analytics',
     period: '2025.09 – 2026.11',
     location: '中国香港',
@@ -19,7 +19,7 @@ export const education: EducationItem[] = [
   {
     school: '悉尼大学',
     schoolEn: 'The University of Sydney',
-    degree: '商学学士',
+    degree: '商学学士｜金融数学和统计&金融双专业',
     degreeEn: 'Bachelor of Commerce',
     major: ['金融', '金融数学与统计学'],
     period: '2023.09 – 2025.06',
@@ -32,5 +32,16 @@ export const education: EducationItem[] = [
     logo: '/images/logos/usyd-logo.png',
     abbreviation: 'USYD',
     accent: 'sky',
+  },
+  {
+    school: '杭州高级中学',
+    schoolEn: 'Hangzhou High School',
+    degree: 'AP 课程',
+    degreeEn: 'Advanced Placement Curriculum',
+    period: '2020.09 – 2023.06',
+    highlights: ['获得校级奖学金', '完成 9 门 AP 课程'],
+    logo: '/images/logos/hangzhou-high-school-logo.png',
+    abbreviation: 'HHS',
+    accent: 'cream',
   },
 ]

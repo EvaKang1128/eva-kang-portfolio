@@ -18,7 +18,7 @@ export interface EducationItem {
   degreeEn: string
   major?: string[]
   period: string
-  location: string
+  location?: string
   highlights: string[]
   logo: string
   abbreviation: string

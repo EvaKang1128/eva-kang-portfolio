@@ -7,5 +7,6 @@
 - `zheshang-securities-logo.png`
 - `shanghai-united-assets-logo.png`
 - `gaodun-logo.png`
+- `hangzhou-high-school-logo.png`
 
 当前不放入版权不明或虚构的 Logo。文件暂缺时，页面会显示带英文缩写的品牌占位。
