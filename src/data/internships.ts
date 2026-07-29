@@ -1,0 +1,56 @@
+import type { Internship } from './types'
+
+export const internships: Internship[] = [
+  {
+    company: '浙商证券股份有限公司',
+    department: '债券投行总部',
+    role: '经理助理',
+    period: '2026.01 – 2026.03',
+    location: '上海，中国',
+    responsibilities: [
+      '协助整理债券发行申报底稿，围绕发行人基本情况开展资料核对。',
+      '梳理历史沿革、股权结构、控股股东、经营范围和主要财务数据，完成版本归集与格式统一。',
+      '使用企查查批量检索被担保方及相关主体信息，核对债券名称、发行主体与担保关系。',
+      '参与尽调材料归集、交叉验证与问题清单跟踪，输出未匹配名单和待补充事项。',
+    ],
+    skills: ['尽职调查', '信息核验', '债券发行', '风险排查', 'Excel'],
+    logo: '/images/logos/zheshang-securities-logo.png',
+    abbreviation: 'ZS',
+    accent: 'lavender',
+  },
+  {
+    company: '上海交易集团有限公司',
+    department: 'IT 部门',
+    role: '数据治理实习生',
+    period: '2025.07 – 2025.08',
+    location: '上海，中国',
+    responsibilities: [
+      '使用 SQL 参与工程建设招投标数据采集与清洗，通过 REGEXP 规则批量过滤无关公告和噪声数据。',
+      '沉淀可复用清洗规则库，覆盖招标公告、中标公告和开标记录等场景。',
+      '使用 Excel VLOOKUP 等工具进行多表交叉核验，定位公告缺失、重复上报、名称与代码不一致等问题。',
+      '参与《数据开发利用管理办法》修订，将管理规则转化为关键字段、判定逻辑和处理流程。',
+      '输出结构化文档和培训 PPT 初稿。',
+    ],
+    skills: ['SQL', 'REGEXP', 'Excel', '数据清洗', '数据质量', '数据治理'],
+    logo: '/images/logos/shanghai-united-assets-logo.png',
+    abbreviation: 'SUA',
+    accent: 'sky',
+  },
+  {
+    company: '高顿教育科技有限公司',
+    department: '海外业务部门',
+    role: '运营实习生',
+    period: '2024.06 – 2025.03',
+    location: '上海 / 悉尼',
+    responsibilities: [
+      '参与面向留学生的课程推广、线上内容运营、市场调研和用户反馈整理。',
+      '对接小红书 KOL 和达人，跟进内容发布与素材交付，并参与悉尼线下活动地推和用户承接。',
+      '围绕“触达—加微—入群”链路执行拉新，单日新增微信 400+，入群约 300+。',
+      '协助搭建微信社群 SOP，并持续跟进 7 至 14 天。',
+    ],
+    skills: ['用户增长', '内容运营', '社群运营', '市场调研', 'KOL 沟通'],
+    logo: '/images/logos/gaodun-logo.png',
+    abbreviation: 'GOLDEN',
+    accent: 'cream',
+  },
+]

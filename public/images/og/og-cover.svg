@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fffefc"/>
+  <rect width="1200" height="22" fill="#6f63d9"/>
+  <rect x="0" y="22" width="460" height="608" fill="#f1eeff"/>
+  <rect x="460" y="22" width="380" height="608" fill="#fff9e6"/>
+  <rect x="840" y="22" width="360" height="608" fill="#edf8ff"/>
+  <rect x="88" y="104" width="122" height="122" rx="28" fill="#6f63d9"/>
+  <text x="149" y="186" fill="#fff1bf" font-family="Arial, sans-serif" font-size="72" font-weight="800" text-anchor="middle">E</text>
+  <text x="88" y="340" fill="#24242a" font-family="Arial, PingFang SC, sans-serif" font-size="78" font-weight="800">Eva Kang</text>
+  <text x="88" y="410" fill="#5046b8" font-family="Arial, PingFang SC, sans-serif" font-size="36" font-weight="700">康雨霏</text>
+  <text x="88" y="487" fill="#61616c" font-family="Arial, PingFang SC, sans-serif" font-size="26">Business Analysis · Data &amp; AI Product</text>
+  <text x="88" y="530" fill="#61616c" font-family="Arial, PingFang SC, sans-serif" font-size="26">Data Governance</text>
+  <rect x="900" y="120" width="190" height="350" rx="95" fill="#dcd6ff"/>
+  <circle cx="1055" cy="126" r="43" fill="#fff1bf"/>
+  <circle cx="885" cy="526" r="57" fill="#cdeBff"/>
+</svg>
