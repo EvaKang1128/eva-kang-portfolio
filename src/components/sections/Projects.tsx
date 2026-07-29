@@ -33,9 +33,9 @@ export function Projects() {
     <section id="projects" className="scroll-mt-24 bg-white py-20 sm:py-24 lg:py-28">
       <Container>
         <SectionHeading
-          eyebrow="Featured project"
-          title="用数据治理解决真实业务问题"
-          description="从 75.7 亿候选空间到可审计的优先账户池，把复杂数据工程转化为业务可用的结果。"
+          eyebrow="Campus projects"
+          title="校园项目经历"
+          description="以真实业务问题为起点，展示从分析、方案设计到原型验证与成果交付的完整项目实践。"
         />
 
         <Reveal>
@@ -129,7 +129,7 @@ export function Projects() {
               <Reveal key={image.src} delay={index * 0.06}>
                 <button
                   type="button"
-                  className="group relative block aspect-[4/3] w-full overflow-hidden rounded-lg border border-black/5 bg-[#F8F8F5] text-left shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                  className="group relative block aspect-video w-full overflow-hidden rounded-lg border border-black/5 bg-[#F8F8F5] text-left shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
                   onClick={() => setActiveImage(image)}
                   aria-label={`查看大图：${image.alt}`}
                 >
@@ -137,7 +137,7 @@ export function Projects() {
                     src={image.src}
                     alt={image.alt}
                     className="h-full w-full"
-                    imageClassName="object-cover transition duration-300 group-hover:scale-[1.03] motion-reduce:transform-none"
+                    imageClassName="object-contain transition duration-300 group-hover:scale-[1.02] motion-reduce:transform-none"
                     fallbackLabel="项目截图待替换"
                     fallbackHint={image.fileName}
                     variant="project"

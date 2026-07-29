@@ -1,8 +1,7 @@
-import { Copy, Mail, Send } from 'lucide-react'
+import { Copy, Mail } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { profile } from '../../data/profile'
 import { Container } from '../layout/Container'
-import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 import { Toast } from '../ui/Toast'
 
@@ -69,7 +68,7 @@ export function Contact() {
               {profile.email}
             </a>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8">
               <button
                 type="button"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-cream px-5 py-2.5 text-sm font-bold text-[#3D3688] transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transform-none"
@@ -78,13 +77,6 @@ export function Contact() {
                 <Copy className="h-4 w-4" aria-hidden="true" />
                 一键复制邮箱
               </button>
-              <Button
-                href={`mailto:${profile.email}`}
-                variant="light"
-                icon={<Send className="h-4 w-4" aria-hidden="true" />}
-              >
-                发送邮件
-              </Button>
             </div>
           </div>
         </Reveal>

@@ -39,6 +39,7 @@ export const skillGroups: SkillGroup[] = [
     items: [
       'JavaScript',
       'PowerPoint',
+      '托福 103 分',
       'Structured Documentation',
       'Cross-functional Communication',
     ],

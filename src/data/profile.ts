@@ -35,7 +35,7 @@ export const navigation: NavigationItem[] = [
 
 export const highlights: Highlight[] = [
   { value: '2 年', label: '完成 3 年本科学位', note: '跨学期超修与集中课程' },
-  { value: '536K', label: '客户数据处理', note: '企业级主数据项目' },
-  { value: '7.57B', label: '候选空间压缩', note: '最终收敛至 6.2M' },
+  { value: '1.2M+', label: '源记录处理', note: 'Pico 客户智能项目' },
+  { value: '167K+', label: 'Golden Records', note: '保留数据血缘' },
   { value: '35 万+', label: '累计创业收入', note: '独立运营悉尼工作室' },
 ]

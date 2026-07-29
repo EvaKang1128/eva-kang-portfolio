@@ -9,7 +9,7 @@ export const education: EducationItem[] = [
     period: '2025.09 – 2026.11',
     location: '中国香港',
     highlights: [
-      '获得入学奖学金',
+      '获得入学奖学金 3.9W HKD',
       '关注商业分析、数据产品、数据治理与数据驱动决策',
     ],
     logo: '/images/logos/hku-logo.png',
@@ -19,7 +19,7 @@ export const education: EducationItem[] = [
   {
     school: '悉尼大学',
     schoolEn: 'The University of Sydney',
-    degree: '商学学士｜金融数学和统计&金融双专业',
+    degree: '商学学士｜金融数学和统计 & 金融双专业',
     degreeEn: 'Bachelor of Commerce',
     major: ['金融', '金融数学与统计学'],
     period: '2023.09 – 2025.06',
@@ -39,7 +39,7 @@ export const education: EducationItem[] = [
     degree: 'AP 课程',
     degreeEn: 'Advanced Placement Curriculum',
     period: '2020.09 – 2023.06',
-    highlights: ['获得校级奖学金', '完成 9 门 AP 课程'],
+    highlights: ['荣获校级奖学金 2000 元', '完成 9 门 AP 课程'],
     logo: '/images/logos/hangzhou-high-school-logo.png',
     abbreviation: 'HHS',
     accent: 'cream',
