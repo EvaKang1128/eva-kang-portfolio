@@ -4,6 +4,7 @@ export const profile = {
   name: '康雨霏',
   englishName: 'Eva Kang',
   email: 'evakang@connect.hku.hk',
+  xiaohongshu: 'k191029186',
   directions: '商业分析｜数据与 AI 产品｜数据治理',
   directionsEn: 'Business Analysis · Data & AI Product · Data Governance',
   introduction:

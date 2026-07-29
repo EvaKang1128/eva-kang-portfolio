@@ -55,4 +55,58 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    title: '悉尼大学 FINC3600｜养老基金资产配置 Capstone',
+    partner: 'The University of Sydney · FINC3600 Finance Capstone',
+    summary:
+      '以投资委员会模拟为背景，为澳大利亚养老基金评估并优化战略与战术资产配置，在成员老龄化带来的流动性需求和宏观不确定性之间平衡长期回报与下行风险。',
+    role:
+      '作为 5 人团队成员，参与宏观与市场分析、资产配置方案设计、风险收益测算、压力测试，以及面向投资委员会的汇报与 CIO Brief 交付。',
+    background:
+      '基金需要在通胀、利率变化与人口结构老龄化的环境下审视现有组合。项目要求团队从宏观判断出发，提出可执行的 SAA / TAA 调整，并用历史情景和模拟结果验证组合韧性。',
+    solution: [
+      '结合宏观经济、市场估值与基金负债特征，形成资产类别观点和战术配置建议。',
+      '重新评估增长型与防御型资产权重，在目标收益、波动率、流动性和回撤风险之间进行权衡。',
+      '使用 10 年期 Monte Carlo 模拟与三组历史情景压力测试，对新旧配置的收益分布和极端环境表现进行比较。',
+    ],
+    results: [
+      '完成 100,000 次 Monte Carlo 模拟，建议组合的 10 年中位累计回报为 87.5%，高于原配置的 82.7%。',
+      '建议组合中位年化回报达到 6.49%，同时在下四分位情景下将年化回报由 4.37% 提升至 4.79%。',
+      '在金融危机与 COVID-19 衰退情景中，组合回报分别由 -20.73% 改善至 -19.02%、由 -10.67% 改善至 -9.59%。',
+      '形成完整的投资委员会演示与 CIO Brief，将宏观观点、配置逻辑和量化验证转化为清晰的投资建议。',
+    ],
+    metrics: [
+      { value: '100K', label: 'Monte Carlo 模拟' },
+      { value: '10 年', label: '投资测算周期' },
+      { value: '3 组', label: '历史压力情景' },
+      { value: '87.5%', label: '中位累计回报' },
+      { value: '6.49%', label: '中位年化回报' },
+    ],
+    tools: [
+      'Strategic Asset Allocation',
+      'Tactical Asset Allocation',
+      'Monte Carlo',
+      'Stress Testing',
+      'Scenario Analysis',
+      'Risk-Return Analysis',
+      'Refinitiv',
+    ],
+    images: [
+      {
+        src: '/images/projects/finc3600-saa.webp',
+        alt: 'FINC3600 项目战略资产配置调整方案',
+        fileName: 'finc3600-saa.webp',
+      },
+      {
+        src: '/images/projects/finc3600-stress-testing.webp',
+        alt: 'FINC3600 项目 Monte Carlo 与历史情景压力测试',
+        fileName: 'finc3600-stress-testing.webp',
+      },
+      {
+        src: '/images/projects/finc3600-monte-carlo.webp',
+        alt: 'FINC3600 项目 Monte Carlo 模拟方法与收益分布',
+        fileName: 'finc3600-monte-carlo.webp',
+      },
+    ],
+  },
 ]

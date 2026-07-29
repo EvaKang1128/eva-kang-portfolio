@@ -1,7 +1,7 @@
 import { CheckCircle2, Maximize2, ShieldCheck, Sparkles, Target, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { ProjectImage } from '../../data/types'
+import type { Project, ProjectImage } from '../../data/types'
 import { projects } from '../../data/projects'
 import { Container } from '../layout/Container'
 import { SectionHeading } from '../layout/SectionHeading'
@@ -11,7 +11,6 @@ import { Tag } from '../ui/Tag'
 
 export function Projects() {
   const [activeImage, setActiveImage] = useState<ProjectImage | null>(null)
-  const project = projects[0]
 
   useEffect(() => {
     if (!activeImage) return
@@ -38,117 +37,15 @@ export function Projects() {
           description="以真实业务问题为起点，展示从分析、方案设计到原型验证与成果交付的完整项目实践。"
         />
 
-        <Reveal>
-          <div className="flex flex-col gap-4 border-b border-black/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs font-bold uppercase text-primary">{project.partner}</p>
-              <h3 className="mt-2 text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
-                {project.title}
-              </h3>
-              <p className="mt-4 max-w-3xl text-base leading-8 text-muted">{project.summary}</p>
-            </div>
-            <div className="flex shrink-0 flex-wrap gap-2 sm:max-w-72 sm:justify-end">
-              {project.tools.slice(0, 4).map((tool, index) => (
-                <Tag key={tool} accent={index % 2 === 0 ? 'lavender' : 'sky'}>
-                  {tool}
-                </Tag>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-
-        <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-5">
-          {project.metrics.map((metric, index) => (
-            <Reveal
-              key={metric.label}
-              delay={index * 0.05}
-              className={`rounded-lg border border-black/5 px-4 py-5 ${
-                index === 2
-                  ? 'col-span-2 bg-cream-light md:col-span-1'
-                  : index % 2 === 0
-                    ? 'bg-lavender-light'
-                    : 'bg-sky-light'
-              }`}
-            >
-              <strong className="block break-words text-xl font-extrabold text-primary-dark sm:text-2xl">
-                {metric.value}
-              </strong>
-              <span className="mt-2 block text-xs font-semibold leading-5 text-muted">{metric.label}</span>
-            </Reveal>
-          ))}
-        </div>
-
-        <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-8">
-            <Reveal>
-              <ProjectDetail
-                icon={<Target className="h-5 w-5" aria-hidden="true" />}
-                title="项目背景"
-                text={project.background}
-              />
-            </Reveal>
-            <Reveal>
-              <ProjectDetail
-                icon={<Sparkles className="h-5 w-5" aria-hidden="true" />}
-                title="我的角色"
-                text={project.role}
-              />
-            </Reveal>
-            <Reveal>
-              <ProjectList
-                icon={<ShieldCheck className="h-5 w-5" aria-hidden="true" />}
-                title="解决方案"
-                items={project.solution}
-              />
-            </Reveal>
-          </div>
-          <Reveal>
-            <ProjectList
-              icon={<CheckCircle2 className="h-5 w-5" aria-hidden="true" />}
-              title="关键成果"
-              items={project.results}
+        <div className="mt-12">
+          {projects.map((project, index) => (
+            <ProjectShowcase
+              key={project.title}
+              project={project}
+              index={index}
+              onImageOpen={setActiveImage}
             />
-            <div className="mt-8 flex flex-wrap gap-2">
-              {project.tools.map((tool) => (
-                <Tag key={tool}>{tool}</Tag>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-
-        <div className="mt-16">
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-bold uppercase text-primary">Project gallery</p>
-              <h3 className="mt-2 text-xl font-extrabold text-ink">项目截图</h3>
-            </div>
-            <p className="hidden text-xs text-muted sm:block">点击图片查看大图</p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {project.images.map((image, index) => (
-              <Reveal key={image.src} delay={index * 0.06}>
-                <button
-                  type="button"
-                  className="group relative block aspect-video w-full overflow-hidden rounded-lg border border-black/5 bg-[#F8F8F5] text-left shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-                  onClick={() => setActiveImage(image)}
-                  aria-label={`查看大图：${image.alt}`}
-                >
-                  <ImageWithFallback
-                    src={image.src}
-                    alt={image.alt}
-                    className="h-full w-full"
-                    imageClassName="object-contain transition duration-300 group-hover:scale-[1.02] motion-reduce:transform-none"
-                    fallbackLabel="项目截图待替换"
-                    fallbackHint={image.fileName}
-                    variant="project"
-                  />
-                  <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-primary-dark shadow-sm backdrop-blur">
-                    <Maximize2 className="h-4 w-4" aria-hidden="true" />
-                  </span>
-                </button>
-              </Reveal>
-            ))}
-          </div>
+          ))}
         </div>
       </Container>
 
@@ -182,6 +79,133 @@ export function Projects() {
         </div>
       )}
     </section>
+  )
+}
+
+function ProjectShowcase({
+  project,
+  index,
+  onImageOpen,
+}: {
+  project: Project
+  index: number
+  onImageOpen: (image: ProjectImage) => void
+}) {
+  return (
+    <article className={index === 0 ? '' : 'mt-20 border-t border-black/10 pt-20 lg:mt-28 lg:pt-28'}>
+      <Reveal>
+        <div className="flex flex-col gap-4 border-b border-black/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-bold uppercase text-primary">{project.partner}</p>
+            <h3 className="mt-2 text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
+              {project.title}
+            </h3>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-muted">{project.summary}</p>
+          </div>
+          <div className="flex shrink-0 flex-wrap gap-2 sm:max-w-72 sm:justify-end">
+            {project.tools.slice(0, 4).map((tool, toolIndex) => (
+              <Tag key={tool} accent={(toolIndex + index) % 2 === 0 ? 'lavender' : 'sky'}>
+                {tool}
+              </Tag>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
+      <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-5">
+        {project.metrics.map((metric, metricIndex) => (
+          <Reveal
+            key={metric.label}
+            delay={metricIndex * 0.05}
+            className={`rounded-lg border border-black/5 px-4 py-5 ${
+              metricIndex === 2
+                ? 'col-span-2 bg-cream-light md:col-span-1'
+                : (metricIndex + index) % 2 === 0
+                  ? 'bg-lavender-light'
+                  : 'bg-sky-light'
+            }`}
+          >
+            <strong className="block break-words text-xl font-extrabold text-primary-dark sm:text-2xl">
+              {metric.value}
+            </strong>
+            <span className="mt-2 block text-xs font-semibold leading-5 text-muted">{metric.label}</span>
+          </Reveal>
+        ))}
+      </div>
+
+      <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="space-y-8">
+          <Reveal>
+            <ProjectDetail
+              icon={<Target className="h-5 w-5" aria-hidden="true" />}
+              title="项目背景"
+              text={project.background}
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectDetail
+              icon={<Sparkles className="h-5 w-5" aria-hidden="true" />}
+              title="我的角色"
+              text={project.role}
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectList
+              icon={<ShieldCheck className="h-5 w-5" aria-hidden="true" />}
+              title="解决方案"
+              items={project.solution}
+            />
+          </Reveal>
+        </div>
+        <Reveal>
+          <ProjectList
+            icon={<CheckCircle2 className="h-5 w-5" aria-hidden="true" />}
+            title="关键成果"
+            items={project.results}
+          />
+          <div className="mt-8 flex flex-wrap gap-2">
+            {project.tools.map((tool) => (
+              <Tag key={tool}>{tool}</Tag>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+
+      <div className="mt-16">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-bold uppercase text-primary">Project gallery</p>
+            <h4 className="mt-2 text-xl font-extrabold text-ink">项目截图</h4>
+          </div>
+          <p className="hidden text-xs text-muted sm:block">点击图片查看大图</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {project.images.map((image, imageIndex) => (
+            <Reveal key={image.src} delay={imageIndex * 0.06}>
+              <button
+                type="button"
+                className="group relative block aspect-video w-full overflow-hidden rounded-lg border border-black/5 bg-[#F8F8F5] text-left shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                onClick={() => onImageOpen(image)}
+                aria-label={`查看大图：${image.alt}`}
+              >
+                <ImageWithFallback
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full"
+                  imageClassName="object-contain transition duration-300 group-hover:scale-[1.02] motion-reduce:transform-none"
+                  fallbackLabel="项目截图待替换"
+                  fallbackHint={image.fileName}
+                  variant="project"
+                />
+                <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-primary-dark shadow-sm backdrop-blur">
+                  <Maximize2 className="h-4 w-4" aria-hidden="true" />
+                </span>
+              </button>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </article>
   )
 }
 
