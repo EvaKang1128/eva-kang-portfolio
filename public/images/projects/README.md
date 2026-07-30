@@ -8,5 +8,8 @@
 - `finc3600-saa.webp`
 - `finc3600-stress-testing.webp`
 - `finc3600-monte-carlo.webp`
+- `travel-agent-ui.webp`
+- `travel-agent-architecture.webp`
+- `travel-agent-rag-evaluation.webp`
 
 建议使用 4:3 或 16:10 的清晰截图。截图画廊支持懒加载、缺图占位和点击查看大图。

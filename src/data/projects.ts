@@ -56,6 +56,62 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: '香港大学 MSBA7035｜全栈 AI 旅行规划系统',
+    partner: 'HKU MSBA7035 Group 7 · April 2026',
+    summary:
+      '将小红书攻略 RAG、确定性行程规划、地图路线、预算估算和旅中 Companion Agent 串成一条可执行的旅行智能链路。',
+    role:
+      '负责问题定义、系统目标与端到端架构梳理，参与团队方案整合与最终汇报；协作连接 RAG、规划 Agent、地图与预算输出，以及旅中 Companion Agent。',
+    background:
+      '旅行攻略只能提供地点建议，却无法同时处理城市、天数、节奏、预算、天气和同行人约束。项目希望把分散的本地攻略转化为可检索证据，再生成可执行、可调整的旅行计划。',
+    solution: [
+      '收集 12 座城市的 100+ 条小红书旅行内容，切分为检索片段并提取城市、内容类型、标签、POI 与区域等元数据。',
+      '采用 ChromaDB dense retrieval 与 BM25 sparse retrieval 的混合检索，再通过城市过滤、查询类型权重和元数据增强降低跨城市噪声。',
+      '用确定性规划器完成偏好评分、区域聚类、路线排序和天气 / 预算审查，并将结果组装成地图、费用和酒店可消费的结构化 payload。',
+      '补充旅中 Companion Agent，支持路线协调、候选搜索、异常重排和应急类请求，形成出发前规划到旅中调整的闭环。',
+    ],
+    results: [
+      '最终 RAG 评测达到 93.5% Average Hit Rate@5 和 0.98 Mean Reciprocal Rank；迭代过程中混合检索将 Hit Rate 从 22% 提升至 84%，城市过滤后达到 90.5%。',
+      'RAGAS 评测 Faithfulness 为 95.3%、Answer Relevancy 为 88.6%，Context Precision 为 74.2%，同时明确后续检索优化空间。',
+      '系统可同时输出 itinerary JSON、Markdown 行程报告、高德地图 payload、酒店推荐和计划费用摘要，而不是只返回一段自然语言建议。',
+      '建立包含延迟、工具调用、成本和 Agent 任务表现的评测框架；当前结果仍属于课程项目验证，不宣称已达到生产级稳定性。',
+    ],
+    metrics: [
+      { value: '12 座', label: '支持城市' },
+      { value: '100+', label: '旅行内容' },
+      { value: '93.5%', label: 'RAG Hit Rate@5' },
+      { value: '0.98', label: 'RAG MRR' },
+      { value: '95.3%', label: 'RAGAS Faithfulness' },
+    ],
+    tools: [
+      'RAG',
+      'ChromaDB',
+      'BM25',
+      'Python',
+      'OpenAI Responses API',
+      'FastAPI',
+      '高德地图',
+      'Agent Evaluation',
+    ],
+    images: [
+      {
+        src: '/images/projects/travel-agent-ui.webp',
+        alt: 'Travel Agent 旅行规划入口、地图与费用输出界面',
+        fileName: 'travel-agent-ui.webp',
+      },
+      {
+        src: '/images/projects/travel-agent-architecture.webp',
+        alt: 'Travel Agent 端到端系统架构与工作流',
+        fileName: 'travel-agent-architecture.webp',
+      },
+      {
+        src: '/images/projects/travel-agent-rag-evaluation.webp',
+        alt: 'Travel Agent RAG 检索质量评测结果',
+        fileName: 'travel-agent-rag-evaluation.webp',
+      },
+    ],
+  },
+  {
     title: '悉尼大学 FINC3600｜养老基金资产配置 Capstone',
     partner: 'The University of Sydney · FINC3600 Finance Capstone',
     summary:
