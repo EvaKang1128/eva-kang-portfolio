@@ -39,7 +39,7 @@ export const education: EducationItem[] = [
     degree: 'AP 课程',
     degreeEn: 'Advanced Placement Curriculum',
     period: '2020.09 – 2023.06',
-    highlights: ['荣获校级奖学金 2000 元', '完成 9 门 AP 课程'],
+    highlights: ['荣获校级奖学金、三好学生'],
     logo: '/images/logos/hangzhou-high-school-logo.png',
     abbreviation: 'HHS',
     accent: 'cream',

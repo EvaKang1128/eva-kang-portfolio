@@ -10,8 +10,8 @@ export const profile = {
   introduction:
     '香港大学商业分析硕士，拥有金融、数据分析与业务运营的复合背景。具备数据治理、主数据管理、商业分析和项目协作经验，关注如何通过数据与 AI 产品解决真实业务问题。',
   about: [
-    '我拥有金融、金融数学与统计学背景，目前就读于香港大学商业分析硕士项目。我的经历横跨证券投行、数据治理、海外业务运营和创业实践，也参与过企业级主数据管理项目。',
-    '我擅长从业务问题出发，拆解需求、梳理数据、识别异常并推动项目落地。相比只关注模型或工具，我更关注分析结果能否转化为清晰、可执行的业务决策，以及数据和 AI 能否真正改善产品与流程。',
+    '香港大学商业分析硕士，兼具金融数学功底与投行、数据治理、海外运营及创业实战经验，曾主导企业级主数据项目。',
+    '不困于模型，不惑于工具，只专注让数据与 AI 真正驱动业务改善与流程进化。',
   ],
   capabilities: [
     '数据与业务分析',
@@ -36,7 +36,7 @@ export const navigation: NavigationItem[] = [
 
 export const highlights: Highlight[] = [
   { value: '2 年', label: '完成 3 年本科学位', note: '跨学期超修与集中课程' },
-  { value: '1.2M+', label: '源记录处理', note: 'Pico 客户智能项目' },
-  { value: '167K+', label: 'Golden Records', note: '保留数据血缘' },
+  { value: '3.9W HKD', label: '香港大学新生奖学金', note: 'HKU Business Analytics' },
+  { value: 'LLM Agent', label: 'AI 产品与开发实践', note: 'Vibe Coding · 个人网站 · 旅行 Agent' },
   { value: '35 万+', label: '累计创业收入', note: '独立运营悉尼工作室' },
 ]

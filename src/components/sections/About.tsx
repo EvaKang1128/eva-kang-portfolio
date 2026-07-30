@@ -14,7 +14,7 @@ export function About() {
         <SectionHeading
           eyebrow="About me"
           title="金融、数据与业务之间的连接者"
-          description="以业务问题为起点，用结构化分析把复杂信息转化为可执行的下一步。"
+          description="以业务问题为起点，用结构化分析将复杂信息拆解为可落地的决策路径。"
         />
 
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
